@@ -13,6 +13,7 @@
 		033689CE19F80DAD00A1FDBF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 033689CD19F80DAD00A1FDBF /* Images.xcassets */; };
 		033689DD19F80DAD00A1FDBF /* HomePwnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 033689DC19F80DAD00A1FDBF /* HomePwnerTests.m */; };
 		03CD00AB19F8102C001679D8 /* ATRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD00AA19F8102C001679D8 /* ATRItem.m */; };
+		03CD00AE19F81089001679D8 /* ATRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CD00AD19F81089001679D8 /* ATRItemStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,8 @@
 		033689DC19F80DAD00A1FDBF /* HomePwnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePwnerTests.m; sourceTree = "<group>"; };
 		03CD00A919F8102C001679D8 /* ATRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATRItem.h; sourceTree = "<group>"; };
 		03CD00AA19F8102C001679D8 /* ATRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATRItem.m; sourceTree = "<group>"; };
+		03CD00AC19F81089001679D8 /* ATRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATRItemStore.h; sourceTree = "<group>"; };
+		03CD00AD19F81089001679D8 /* ATRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATRItemStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 		033689BF19F80DAD00A1FDBF /* HomePwner */ = {
 			isa = PBXGroup;
 			children = (
+				03CD00AC19F81089001679D8 /* ATRItemStore.h */,
+				03CD00AD19F81089001679D8 /* ATRItemStore.m */,
 				03CD00A919F8102C001679D8 /* ATRItem.h */,
 				03CD00AA19F8102C001679D8 /* ATRItem.m */,
 				033689C419F80DAD00A1FDBF /* AppDelegate.h */,
@@ -219,6 +224,7 @@
 				033689C919F80DAD00A1FDBF /* ATRItemsViewController.m in Sources */,
 				033689C619F80DAD00A1FDBF /* AppDelegate.m in Sources */,
 				03CD00AB19F8102C001679D8 /* ATRItem.m in Sources */,
+				03CD00AE19F81089001679D8 /* ATRItemStore.m in Sources */,
 				033689C319F80DAD00A1FDBF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
