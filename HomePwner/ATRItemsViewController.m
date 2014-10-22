@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 New Public Art Foundation. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ATRItemsViewController.h"
 
-@interface ViewController ()
+@interface ATRItemsViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ATRItemsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
