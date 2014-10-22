@@ -14,6 +14,18 @@
 
 @implementation ATRItemsViewController
 
+- (instancetype)init
+{
+    // Call the superclass's designated initializer
+    self = [super initWithStyle:UITableViewStylePlain];
+    return self;
+}
+
+- (instancetype)initWithStyle:(UITableViewStyle)style
+{
+    return [self init];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

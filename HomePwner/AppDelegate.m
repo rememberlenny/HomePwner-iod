@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ATRItemsViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    //Create a ATRItemsViewController
+    ATRItemsViewController *itemsViewController = [[ATRItemsViewController alloc] init];
+    
+    // Place ATRItemsViewController's table view in the window hierarchy
+    self.window.rootViewController = itemsViewController;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
