@@ -19,6 +19,13 @@
 
 @implementation ATRItemsViewController
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ATRDetailViewController *detailViewController = [[ATRDetailViewController alloc] init];
