@@ -12,9 +12,21 @@
 
 @interface ATRItemsViewController ()
 
+@property (nonatomic, strong) IBOutlet UIView *headerView;
+
 @end
 
 @implementation ATRItemsViewController
+
+- (IBAction)addNewItem:(id)sender
+{
+    
+}
+
+- (IBAction)toggleEditingMode:(id)sender
+{
+    
+}
 
 - (instancetype)init
 {
@@ -37,6 +49,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.tableView registerClass:[UITableViewCell class]
+           forCellReuseIdentifier:@"UITableViewCell"];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -48,9 +63,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Create an instnce of UITableViewCell, with default appearance
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                                   reuseIdentifier:@"UITableViewCell"];
+    // Get new or recycled cell
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
+                                                            forIndexPath:indexPath];
 
     // Set the text on the cell with the description of the item
     // that is at the nth index of items, where n = row this cell
