@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class ATRItem;
+
 @interface ATRDetailViewController : UIViewController
 
+@property (nonatomic, strong) ATRItem *item;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
 @property (weak, nonatomic) IBOutlet UITextField *valueField;

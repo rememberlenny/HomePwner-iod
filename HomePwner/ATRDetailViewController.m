@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 New Public Art Foundation. All rights reserved.
 //
 
+#import "ATRItem.h"
 #import "ATRDetailViewController.h"
 
 @interface ATRDetailViewController ()
@@ -13,6 +14,25 @@
 @end
 
 @implementation ATRDetailViewController
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    ATRItem *item = self.item;
+    
+    self.nameField.text = item.itemName;
+    self.serialNumberField.text = item.serialNumber;
+    self.valueField.text = [NSString stringWithFormat:@"%d", item.valueInDollars];
+    static NSDateFormatter *dateFormatter;
+    if(!dateFormatter){
+        dateFormatter = [[NSDateFormatter alloc] init];
+        dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+        dateFormatter.timeStyle = NSDateFormatterNoStyle;
+    }
+    
+    self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

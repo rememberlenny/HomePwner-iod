@@ -23,6 +23,12 @@
 {
     ATRDetailViewController *detailViewController = [[ATRDetailViewController alloc] init];
     
+    NSArray *items = [[ATRItemStore sharedStore] allItems];
+    ATRItem *selectedItem = items[indexPath.row];
+    
+    // Give detail view controller a pointer to the item object in row
+    detailViewController.item = selectedItem;
+    
     // Push it onto the top of the navigation controller's stack
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
