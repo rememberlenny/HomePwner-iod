@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 New Public Art Foundation. All rights reserved.
 //
 
+#import "ATRDetailViewController.h"
 #import "ATRItemsViewController.h"
 #import "ATRItemStore.h"
 #import "ATRItem.h"
@@ -18,6 +19,13 @@
 
 @implementation ATRItemsViewController
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ATRDetailViewController *detailViewController = [[ATRDetailViewController alloc] init];
+    
+    // Push it onto the top of the navigation controller's stack
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
 
 - (IBAction)addNewItem:(id)sender
 {

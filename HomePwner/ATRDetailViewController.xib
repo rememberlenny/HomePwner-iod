@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="dateLabel" destination="iMN-hj-ClC" id="QAX-8F-kuS"/>
                 <outlet property="nameField" destination="0Ix-uH-PFV" id="zXI-SI-NaH"/>
-                <outlet property="serialField" destination="Dcd-oi-JdS" id="Jco-yb-9VC"/>
                 <outlet property="serialNumberField" destination="Dcd-oi-JdS" id="Att-9H-fnw"/>
                 <outlet property="valueField" destination="RLC-Ky-FYs" id="IbT-Tn-Ncc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
