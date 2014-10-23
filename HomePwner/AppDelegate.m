@@ -22,9 +22,12 @@
     
     //Create a ATRItemsViewController
     ATRItemsViewController *itemsViewController = [[ATRItemsViewController alloc] init];
+
+    // Create an instance of a UINavigationController
+    // its stack contains only itemsViewController
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:itemsViewController];
+    self.window.rootViewController = navController;
     
-    // Place ATRItemsViewController's table view in the window hierarchy
-    self.window.rootViewController = itemsViewController;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
