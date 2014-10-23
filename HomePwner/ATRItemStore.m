@@ -7,6 +7,7 @@
 //
 
 #import "ATRItem.h"
+#import "ATRImageStore.h"
 #import "ATRItemStore.h"
 
 @interface ATRItemStore ()
@@ -68,6 +69,10 @@
 
 - (void)removeItem:(ATRItem *)item
 {
+    NSString *key = item.itemKey;
+    
+    [[ATRImageStore sharedStore] deleteImageForKey:key];
+    
     [self.privateItems removeObjectIdenticalTo:item];
 }
 

@@ -7,9 +7,10 @@
 //
 
 #import "ATRItem.h"
+#import "ATRImageStore.h"
 #import "ATRDetailViewController.h"
 
-@interface ATRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface ATRDetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
@@ -21,6 +22,17 @@
 @end
 
 @implementation ATRDetailViewController
+
+- (IBAction)backgroundTapped:(id)sender
+{
+    [self.view endEditing:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 
 - (IBAction)takePicture:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -40,10 +52,15 @@
     [self presentViewController:imagePicker animated:YES completion:NULL];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     // Get picked image from info dictionary
     UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    // Store the image in the ATRImageStore for this key
+    [[ATRImageStore sharedStore] setImage:image
+                                   forKey:self.item.itemKey];
     
     // Put that image onto the screen in our image view
     self.imageView.image = image;
@@ -84,6 +101,15 @@
     }
     
     self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
+
+    NSString *itemKey = self.item.itemKey;
+    
+    // Get the image for its image key from the image store
+    UIImage *imageToDisplay = [[ATRImageStore sharedStore] imageForKey:itemKey];
+    
+    // Use that image to put on the screen in the imageView
+    self.imageView.image = imageToDisplay;
+
 }
 
 - (void)viewDidLoad {
