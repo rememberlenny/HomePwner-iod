@@ -55,28 +55,6 @@
                           withRowAnimation:UITableViewRowAnimationTop];
 }
 
-- (IBAction)toggleEditingMode:(id)sender
-{
-
-    // If you are currentl yin editing mode...
-    if (self.isEditing) {
-        // Change text of button to inform user of state
-        [sender setTitle:@"Edit" forState:UIControlStateNormal];
-        
-        // Turn off editing mode
-        [self setEditing:NO animated:YES];
-        
-    }else{
-        
-        // Change text of button to inform user of state
-        [sender setTitle:@"Done" forState:UIControlStateNormal];
-        
-        // Enter eidting mode
-        [self setEditing:YES animated:YES];
-    }
-    
-}
-
 - (instancetype)init
 {
     // Call the superclass's designated initializer
@@ -112,10 +90,6 @@
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
     
-    UIView *header = self.headerView;
-    [self.tableView setTableHeaderView:header];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -123,18 +97,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (UIView *)headerView
-{
-    // If you have not loaded the headerViw yer...
-    if (!_headerView) {
-        // Load headerview.xib
-        [[NSBundle mainBundle] loadNibNamed:@"HeaderView"
-                                      owner:self
-                                    options:nil];
-    }
-    
-    return _headerView;
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
