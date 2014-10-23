@@ -10,6 +10,7 @@
                 <outlet property="imageView" destination="8US-VK-4jx" id="p3q-TW-IFq"/>
                 <outlet property="nameField" destination="0Ix-uH-PFV" id="zXI-SI-NaH"/>
                 <outlet property="serialNumberField" destination="Dcd-oi-JdS" id="Att-9H-fnw"/>
+                <outlet property="toolbar" destination="jDX-BY-F0c" id="btX-ma-ter"/>
                 <outlet property="valueField" destination="RLC-Ky-FYs" id="IbT-Tn-Ncc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
