@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032C987F19F9024F00AC1757 /* ATRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C987E19F9024F00AC1757 /* ATRImageStore.m */; };
+		032C988119F902CF00AC1757 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 032C988019F902CF00AC1757 /* Default-568h@2x.png */; };
 		033689C319F80DAD00A1FDBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 033689C219F80DAD00A1FDBF /* main.m */; };
 		033689C619F80DAD00A1FDBF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 033689C519F80DAD00A1FDBF /* AppDelegate.m */; };
 		033689C919F80DAD00A1FDBF /* ATRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033689C819F80DAD00A1FDBF /* ATRItemsViewController.m */; };
@@ -30,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		032C987D19F9024F00AC1757 /* ATRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATRImageStore.h; sourceTree = "<group>"; };
+		032C987E19F9024F00AC1757 /* ATRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATRImageStore.m; sourceTree = "<group>"; };
+		032C988019F902CF00AC1757 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		033689BD19F80DAD00A1FDBF /* HomePwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomePwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033689C119F80DAD00A1FDBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033689C219F80DAD00A1FDBF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,6 +77,7 @@
 		033689B419F80DAD00A1FDBF = {
 			isa = PBXGroup;
 			children = (
+				032C988019F902CF00AC1757 /* Default-568h@2x.png */,
 				033689BF19F80DAD00A1FDBF /* HomePwner */,
 				033689D919F80DAD00A1FDBF /* HomePwnerTests */,
 				033689BE19F80DAD00A1FDBF /* Products */,
@@ -93,6 +99,8 @@
 				0399EB2719F8E64600A63F93 /* ATRDetailViewController.h */,
 				0399EB2819F8E64600A63F93 /* ATRDetailViewController.m */,
 				0399EB2919F8E64600A63F93 /* ATRDetailViewController.xib */,
+				032C987D19F9024F00AC1757 /* ATRImageStore.h */,
+				032C987E19F9024F00AC1757 /* ATRImageStore.m */,
 				03CD00AF19F8B6DC001679D8 /* HeaderView.xib */,
 				03CD00AC19F81089001679D8 /* ATRItemStore.h */,
 				03CD00AD19F81089001679D8 /* ATRItemStore.m */,
@@ -216,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				033689CE19F80DAD00A1FDBF /* Images.xcassets in Resources */,
+				032C988119F902CF00AC1757 /* Default-568h@2x.png in Resources */,
 				0399EB2B19F8E64600A63F93 /* ATRDetailViewController.xib in Resources */,
 				03CD00B019F8B6DC001679D8 /* HeaderView.xib in Resources */,
 			);
@@ -241,6 +250,7 @@
 				03CD00AB19F8102C001679D8 /* ATRItem.m in Sources */,
 				03CD00AE19F81089001679D8 /* ATRItemStore.m in Sources */,
 				033689C319F80DAD00A1FDBF /* main.m in Sources */,
+				032C987F19F9024F00AC1757 /* ATRImageStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
