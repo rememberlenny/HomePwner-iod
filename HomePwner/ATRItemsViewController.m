@@ -126,8 +126,15 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+      toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    [[ATRItemStore sharedStore] moveItemAtIndex:sourceIndexPath.row
+                                        toIndex:destinationIndexPath.row];
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath
+                                            forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // If the table view is asking to commit a delete command...
     if (editingStyle == UITableViewCellEditingStyleDelete){

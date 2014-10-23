@@ -49,6 +49,23 @@
     return self;
 }
 
+- (void)moveItemAtIndex:(NSUInteger)fromIndex
+                toIndex:(NSUInteger)toIndex
+{
+    if(fromIndex == toIndex){
+        return;
+    }
+    
+    // Get pointer to object being moved so you can re-insert it
+    ATRItem *item = self.privateItems[fromIndex];
+    
+    // Remove item from array
+    [self.privateItems removeObjectAtIndex:fromIndex];
+    
+    // Insert item in array at new loction
+    [self.privateItems insertObject:item atIndex:toIndex];
+}
+
 - (void)removeItem:(ATRItem *)item
 {
     [self.privateItems removeObjectIdenticalTo:item];
