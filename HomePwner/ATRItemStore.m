@@ -49,6 +49,11 @@
     return self;
 }
 
+- (void)removeItem:(ATRItem *)item
+{
+    [self.privateItems removeObjectIdenticalTo:item];
+}
+
 - (NSArray *)allItems
 {
     return [self.privateItems copy];

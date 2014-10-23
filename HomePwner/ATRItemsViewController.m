@@ -21,7 +21,17 @@
 
 - (IBAction)addNewItem:(id)sender
 {
+    // Create a new ATRItem and add it to the store
+    ATRItem *newItem = [[ATRItemStore sharedStore] createItem];
     
+    // Figure out where that item is in the array
+    NSInteger lastRow = [[[ATRItemStore sharedStore] allItems] indexOfObject:newItem];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    
+    // Insert this new row into the table.
+    [self.tableView insertRowsAtIndexPaths:@[indexPath]
+                          withRowAnimation:UITableViewRowAnimationTop];
 }
 
 - (IBAction)toggleEditingMode:(id)sender
@@ -52,9 +62,6 @@
     self = [super initWithStyle:UITableViewStylePlain];
     
     if (self) {
-        for (int i = 0; i < 5; i++) {
-            [[ATRItemStore sharedStore] createItem];
-        }
     }
     
     return self;
@@ -117,5 +124,22 @@
 {
     return [[[ATRItemStore sharedStore] allItems] count];
 }
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // If the table view is asking to commit a delete command...
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        NSArray *items = [[ATRItemStore sharedStore] allItems];
+        ATRItem *item = items[indexPath.row];
+        [[ATRItemStore sharedStore] removeItem:item];
+        
+        // Also remove that row from the table view with an animation
+        [tableView deleteRowsAtIndexPaths:@[indexPath]
+                         withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
 
 @end
