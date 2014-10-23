@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ATRDetailViewController">
             <connections>
                 <outlet property="dateLabel" destination="iMN-hj-ClC" id="QAX-8F-kuS"/>
+                <outlet property="imageView" destination="8US-VK-4jx" id="p3q-TW-IFq"/>
                 <outlet property="nameField" destination="0Ix-uH-PFV" id="zXI-SI-NaH"/>
                 <outlet property="serialNumberField" destination="Dcd-oi-JdS" id="Att-9H-fnw"/>
                 <outlet property="valueField" destination="RLC-Ky-FYs" id="IbT-Tn-Ncc"/>
@@ -57,6 +58,9 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8US-VK-4jx">
+                    <rect key="frame" x="12" y="253" width="297" height="298"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
