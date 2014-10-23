@@ -13,10 +13,6 @@
 @interface ATRDetailViewController : UIViewController
 
 @property (nonatomic, strong) ATRItem *item;
-@property (weak, nonatomic) IBOutlet UITextField *nameField;
-@property (weak, nonatomic) IBOutlet UITextField *serialNumberField;
-@property (weak, nonatomic) IBOutlet UITextField *valueField;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
+
