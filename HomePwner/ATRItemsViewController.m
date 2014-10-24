@@ -11,11 +11,11 @@
 #import "ATRItemStore.h"
 #import "ATRItem.h"
 #import "ATRItemCell.h"
+#import "ATRImageViewController.h"
+#import "ATRImageStore.h"
 
-@interface ATRItemsViewController ()
-
-@property (nonatomic, strong) IBOutlet UIView *headerView;
-
+@interface ATRItemsViewController () <UIPopoverControllerDelegate>
+@property (strong, nonatomic) UIPopoverController *imagePopover;
 @end
 
 @implementation ATRItemsViewController
@@ -126,9 +126,44 @@
    
     cell.actionBlock = ^{
         NSLog(@"Going to show image for %@", item);
+        
+        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+            NSString *itemKey = item.itemKey;
+            
+            // If there is no image, we dont need to display anything
+            UIImage *img = [[ATRImageStore sharedStore] imageForKey:itemKey];
+            if (!img) {
+                return;
+            }
+            
+            // Make a rectangle for the frame of the thumbnail relative to
+            // our table view
+            // Note: there will be a warning on this line that we'll soon discuss
+            
+            CGRect rect = [self.view convertRect:cell.thumbnailView.bounds
+                                        fromView:cell.thumbnailView];
+            
+            // Create a new ATRImageViewController and set its image
+            ATRImageViewController *ivc = [[ATRImageViewController alloc] init];
+            ivc.image = img;
+            
+            // Present a 600x600 popover from the rect
+            self.imagePopover = [[UIPopoverController alloc] initWithContentViewController:ivc];
+            self.imagePopover.delegate = self;
+            self.imagePopover.popoverContentSize = CGSizeMake(600, 600);
+            [self.imagePopover presentPopoverFromRect:rect
+                                               inView:self.view
+                             permittedArrowDirections:UIPopoverArrowDirectionAny
+                                             animated:YES];
+        }
     };
     
     return cell;
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
+    self.imagePopover = nil;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
