@@ -114,7 +114,50 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIImageView *iv = [[UIImageView alloc] initWithImage:nil];
+    
+    // The contentMode of the image viewi n the XIB was Aspect Fit:
+    iv.contentMode = UIViewContentModeScaleAspectFit;
+    
+    // Do not produce a translated constraint for this view
+    iv.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    // The image view was a subview o fhte view
+    [self.view addSubview:iv];
+    
+    // The image view was pointed to by the imageView property
+    self.imageView = iv;
+    
+    // Set the veritcal priorities to be less than
+    // those of the other subviews
+    [self.imageView setContentHuggingPriority:200
+                                      forAxis:UILayoutConstraintAxisVertical];
+    [self.imageView setContentCompressionResistancePriority:700
+                                                    forAxis:UILayoutConstraintAxisVertical];
+    
+    
     // Do any additional setup after loading the view from its nib.
+    NSDictionary *nameMap = @{@"imageView" : self.imageView,
+                              @"dateLabel" : self.dateLabel,
+                                @"toolbar" : self.toolbar};
+    
+    // imageView is - pts from superview at eleft and right edges
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[imageView]-0-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:nameMap];
+    
+    // imageView is 8 pts from dateLAbel at its top edge...
+    // ... and 9 pts from toolbar at its bottom edge
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat: @"V:[dateLabel]-[imageView]-[toolbar]"
+                                                                           options:0
+                                                                           metrics:nil
+                                                                             views:nameMap];
+    
+    [self.view addConstraints:horizontalConstraints];
+    [self.view addConstraints:verticalConstraints];
+    
 }
 
 - (void)didReceiveMemoryWarning {
