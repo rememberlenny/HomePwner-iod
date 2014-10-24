@@ -36,7 +36,13 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="508" y="195"/>
+            <connections>
+                <outlet property="nameLabel" destination="vrq-U3-saq" id="1qs-8j-u35"/>
+                <outlet property="serialNumberLabel" destination="0ds-W3-73c" id="yrg-Kv-u7z"/>
+                <outlet property="thumbnailView" destination="npr-3s-Psr" id="rKh-13-o9J"/>
+                <outlet property="valueLabel" destination="fC2-5O-MaF" id="XJl-Pg-r7s"/>
+            </connections>
+            <point key="canvasLocation" x="567" y="204"/>
         </tableViewCell>
     </objects>
 </document>
