@@ -155,6 +155,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     // Get picked image from info dictionary
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     
+    [self.item setThumbnailFromImage:image];
+    
     // Store the image in the ATRImageStore for this key
     [[ATRImageStore sharedStore] setImage:image
                                    forKey:self.item.itemKey];
