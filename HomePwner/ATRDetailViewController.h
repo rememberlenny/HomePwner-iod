@@ -13,6 +13,7 @@
 @interface ATRDetailViewController : UIViewController
 
 @property (nonatomic, strong) ATRItem *item;
+@property (nonatomic, copy) void (^dismissBlock)(void);
 
 - (instancetype)initForNewItem:(BOOL)isNew;
 
