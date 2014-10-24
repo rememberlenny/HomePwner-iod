@@ -18,10 +18,33 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cameraButton;
 
 @end
 
 @implementation ATRDetailViewController
+
+- (void)prepareViewsForOrientation:(UIInterfaceOrientation)orientation
+{
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        return;
+    }
+    // Is it landscape?
+    if (UIInterfaceOrientationIsLandscape(orientation)) {
+        NSLog(@"Is in landscape");
+        self.imageView.hidden = YES;
+        self.cameraButton.enabled = NO;
+    }else{
+        NSLog(@"Not in landscape");
+        self.imageView.hidden = NO;
+        self.cameraButton.enabled = YES;
+    }
+}
+
+- (void)willAnimateRotationToInterfaceOrientation: (UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [self prepareViewsForOrientation:toInterfaceOrientation];
+}
 
 - (IBAction)backgroundTapped:(id)sender
 {
@@ -87,6 +110,9 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    UIInterfaceOrientation io = [[UIApplication sharedApplication] statusBarOrientation];
+    [self prepareViewsForOrientation:io];
     
     ATRItem *item = self.item;
     
