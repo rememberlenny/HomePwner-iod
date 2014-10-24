@@ -10,6 +10,7 @@
 #import "ATRItemsViewController.h"
 #import "ATRItemStore.h"
 #import "ATRItem.h"
+#import "ATRItemCell.h"
 
 @interface ATRItemsViewController ()
 
@@ -92,8 +93,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[UITableViewCell class]
-           forCellReuseIdentifier:@"UITableViewCell"];
+    // Load the NIB file
+    UINib *nib = [UINib nibWithNibName:@"ATRItemCell" bundle:nil];
+    
+    // Register this NIB, which contains the cell
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"ATRItemCell"];
     
 }
 
@@ -106,18 +110,19 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Get new or recycled cell
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
-                                                            forIndexPath:indexPath];
-
-    // Set the text on the cell with the description of the item
-    // that is at the nth index of items, where n = row this cell
-    // will appear in on the tableview
+    // Get a new or recycled cell
+    ATRItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ATRItemCell"
+                                                        forIndexPath:indexPath];
+    
     NSArray *items = [[ATRItemStore sharedStore] allItems];
-    NSArray *item = items[indexPath.row];
+    ATRItem *item = items[indexPath.row];
 
-    cell.textLabel.text = [item description];
-
+    // configure the cell with the ATRItem
+    cell.nameLabel.text = item.itemName;
+    cell.serialNumberLabel.text = item.serialNumber;
+    cell.valueLabel.text = [NSString stringWithFormat:@"$%d", item.valueInDollars];
+    
+    
     return cell;
 }
 
