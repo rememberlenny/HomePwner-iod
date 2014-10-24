@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ATRItem : NSObject
+@interface ATRItem : NSObject <NSCoding>
 {
 }
 

@@ -20,6 +20,8 @@
 
 - (ATRItem *)createItem;
 
+- (BOOL)saveChanges;
+
 - (void)removeItem:(ATRItem *)item;
 
 - (void)moveItemAtIndex:(NSUInteger)fromIndex
