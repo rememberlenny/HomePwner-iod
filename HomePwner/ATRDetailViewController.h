@@ -14,5 +14,8 @@
 
 @property (nonatomic, strong) ATRItem *item;
 
+- (instancetype)initForNewItem:(BOOL)isNew;
+
 @end
+
 

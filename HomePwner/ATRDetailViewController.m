@@ -7,6 +7,7 @@
 //
 
 #import "ATRItem.h"
+#import "ATRItemStore.h"
 #import "ATRImageStore.h"
 #import "ATRDetailViewController.h"
 
@@ -24,6 +25,50 @@
 @end
 
 @implementation ATRDetailViewController
+
+- (instancetype)initForNewItem:(BOOL)isNew
+{
+    self = [super initWithNibName:nil bundle:nil];
+    
+    if (self) {
+        if (isNew) {
+            UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                      target:self
+                                                                                      action:@selector(save:)];
+            self.navigationItem.rightBarButtonItem = doneItem;
+            
+            UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                        target:self
+                                                                                        action:@selector(cancel:)];
+           self.navigationItem.leftBarButtonItem = cancelItem;
+        }
+    }
+    
+    return self;
+}
+
+- (void)cancel:(id)sender
+{
+    // If the user cancelled, then remove the ATRITem from the store
+    [[ATRItemStore sharedStore] removeItem:self.item];
+    
+    [self.presentingViewController dismissViewControllerAnimated:YES
+                                                      completion:NULL];
+}
+
+- (void)save:(id)sender
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES
+                                                      completion:NULL];
+}
+
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil
+                        bundlle:(NSBundle *)nibBundleOrNil
+{
+    [NSException raise:@"Wrong initializer"
+                format:@"User initForNewItem:"];
+    return nil;
+}
 
 - (void)prepareViewsForOrientation:(UIInterfaceOrientation)orientation
 {

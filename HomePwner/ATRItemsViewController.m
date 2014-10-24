@@ -28,7 +28,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ATRDetailViewController *detailViewController = [[ATRDetailViewController alloc] init];
+    ATRDetailViewController *detailViewController = [[ATRDetailViewController alloc] initForNewItem:NO];
     
     NSArray *items = [[ATRItemStore sharedStore] allItems];
     ATRItem *selectedItem = items[indexPath.row];
@@ -45,14 +45,13 @@
     // Create a new ATRItem and add it to the store
     ATRItem *newItem = [[ATRItemStore sharedStore] createItem];
     
-    // Figure out where that item is in the array
-    NSInteger lastRow = [[[ATRItemStore sharedStore] allItems] indexOfObject:newItem];
+    ATRDetailViewController *detailViewController = [[ATRDetailViewController alloc] initForNewItem:YES];
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    detailViewController.item = newItem;
     
-    // Insert this new row into the table.
-    [self.tableView insertRowsAtIndexPaths:@[indexPath]
-                          withRowAnimation:UITableViewRowAnimationTop];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+    
+    [self presentViewController:navController animated:YES completion:NULL];
 }
 
 - (instancetype)init
