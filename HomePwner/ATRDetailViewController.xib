@@ -32,13 +32,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serial" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eA-fv-V5i">
-                    <rect key="frame" x="20" y="128" width="43" height="21"/>
+                    <rect key="frame" x="20" y="128" width="46" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3u-nS-t8j">
-                    <rect key="frame" x="20" y="172" width="42" height="21"/>
+                    <rect key="frame" x="20" y="172" width="46" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -104,6 +104,7 @@
                 <constraint firstItem="RLC-Ky-FYs" firstAttribute="trailing" secondItem="iMN-hj-ClC" secondAttribute="trailing" id="SIZ-jR-fm4"/>
                 <constraint firstItem="Dcd-oi-JdS" firstAttribute="leading" secondItem="RLC-Ky-FYs" secondAttribute="leading" id="UMW-O5-knP"/>
                 <constraint firstItem="RLC-Ky-FYs" firstAttribute="top" secondItem="Dcd-oi-JdS" secondAttribute="bottom" constant="14" id="ano-Zu-SEe"/>
+                <constraint firstItem="1eA-fv-V5i" firstAttribute="width" secondItem="kAN-TQ-wop" secondAttribute="width" id="dYl-CB-1b5"/>
                 <constraint firstItem="1eA-fv-V5i" firstAttribute="baseline" secondItem="Dcd-oi-JdS" secondAttribute="baseline" constant="1" id="dyF-RW-OWU"/>
                 <constraint firstItem="Q3u-nS-t8j" firstAttribute="leading" secondItem="iMN-hj-ClC" secondAttribute="leading" id="f0K-ic-1HM"/>
                 <constraint firstItem="jDX-BY-F0c" firstAttribute="top" secondItem="8US-VK-4jx" secondAttribute="bottom" constant="16" id="f9E-DP-6kZ"/>
@@ -120,6 +121,7 @@
                 <constraint firstAttribute="trailing" secondItem="8US-VK-4jx" secondAttribute="trailing" constant="11" id="t43-uO-WIr"/>
                 <constraint firstItem="1eA-fv-V5i" firstAttribute="top" secondItem="kAN-TQ-wop" secondAttribute="bottom" constant="23" id="vEi-85-KYd"/>
                 <constraint firstItem="kAN-TQ-wop" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="xpk-J5-3LT"/>
+                <constraint firstItem="1eA-fv-V5i" firstAttribute="width" secondItem="Q3u-nS-t8j" secondAttribute="width" id="ySK-wx-HqI"/>
                 <constraint firstItem="8US-VK-4jx" firstAttribute="centerX" secondItem="iMN-hj-ClC" secondAttribute="centerX" id="zgQ-i5-ZRH"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

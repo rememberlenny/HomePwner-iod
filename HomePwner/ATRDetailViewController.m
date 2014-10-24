@@ -58,10 +58,23 @@
                                                                                         target:self
                                                                                         action:@selector(cancel:)];
            self.navigationItem.leftBarButtonItem = cancelItem;
+            
         }
-    }
+        
+        NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+        [defaultCenter addObserver:self
+                          selector:@selector(updateFonts)
+                              name:UIContentSizeCategoryDidChangeNotification
+                            object:nil];
     
+    }
     return self;
+}
+
+- (void)dealloc
+{
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter removeObserver:self];
 }
 
 - (void)cancel:(id)sender
