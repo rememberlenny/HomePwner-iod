@@ -10,6 +10,7 @@
 		032C987F19F9024F00AC1757 /* ATRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C987E19F9024F00AC1757 /* ATRImageStore.m */; };
 		032C988119F902CF00AC1757 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 032C988019F902CF00AC1757 /* Default-568h@2x.png */; };
 		032C98BF19FA19A700AC1757 /* ATRItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 032C98BE19FA19A700AC1757 /* ATRItemCell.m */; };
+		032C98C119FA19F500AC1757 /* ATRItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032C98C019FA19F500AC1757 /* ATRItemCell.xib */; };
 		033689C319F80DAD00A1FDBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 033689C219F80DAD00A1FDBF /* main.m */; };
 		033689C619F80DAD00A1FDBF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 033689C519F80DAD00A1FDBF /* AppDelegate.m */; };
 		033689C919F80DAD00A1FDBF /* ATRItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033689C819F80DAD00A1FDBF /* ATRItemsViewController.m */; };
@@ -37,6 +38,7 @@
 		032C988019F902CF00AC1757 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		032C98BD19FA19A700AC1757 /* ATRItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATRItemCell.h; sourceTree = "<group>"; };
 		032C98BE19FA19A700AC1757 /* ATRItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATRItemCell.m; sourceTree = "<group>"; };
+		032C98C019FA19F500AC1757 /* ATRItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ATRItemCell.xib; sourceTree = "<group>"; };
 		033689BD19F80DAD00A1FDBF /* HomePwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomePwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		033689C119F80DAD00A1FDBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		033689C219F80DAD00A1FDBF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				032C98BD19FA19A700AC1757 /* ATRItemCell.h */,
 				032C98BE19FA19A700AC1757 /* ATRItemCell.m */,
+				032C98C019FA19F500AC1757 /* ATRItemCell.xib */,
 				0399EB2719F8E64600A63F93 /* ATRDetailViewController.h */,
 				0399EB2819F8E64600A63F93 /* ATRDetailViewController.m */,
 				0399EB2919F8E64600A63F93 /* ATRDetailViewController.xib */,
@@ -227,6 +230,7 @@
 			files = (
 				033689CE19F80DAD00A1FDBF /* Images.xcassets in Resources */,
 				032C988119F902CF00AC1757 /* Default-568h@2x.png in Resources */,
+				032C98C119FA19F500AC1757 /* ATRItemCell.xib in Resources */,
 				0399EB2B19F8E64600A63F93 /* ATRDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
